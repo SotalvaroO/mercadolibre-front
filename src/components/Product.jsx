@@ -9,6 +9,7 @@ import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {Link} from 'react-router-dom'
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -32,6 +33,7 @@ export default function Product({
 
   return (
     <Card sx={{ maxWidth: 345 }}>
+      <Link to={`/productDetail/${id}`}>
       <CardHeader
         action={
           <Typography
@@ -45,6 +47,7 @@ export default function Product({
         title={title}
         subheader={available_quantity}
       />
+      </Link>
       <CardMedia component="img" height="194" image={thumbnail} alt="img" />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
